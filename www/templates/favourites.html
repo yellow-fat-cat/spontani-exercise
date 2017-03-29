@@ -1,0 +1,36 @@
+<ion-view view-title="" hide-back-button="false">
+    <ion-content>
+        <div id="favoritesList" ng-class="{editMode: editMode == true}">
+            <div class="f_top">
+                <span>מועדפים</span>
+                <img src="img/favorite_info_button.png">
+            </div>
+            <div class="f_main_top">
+                <a class="button" ng-click="toggleEditMode()">ערוך<span><i class="icon ion-edit"></i></span></a>
+                <a class="button">הוסף<span><i class="icon ion-plus-round"></i></span></a>
+            </div>
+            <div ng-repeat="item in jopa">
+                <div class="f_deal" ng-show="$root.isFavoriteSupplier(item.deals[0].supplier_index)">
+                    <div class="f_logo">
+                        <img ng-src="{{imageUrl}}/{{item.image}}" />
+                    </div>
+                    <div class="f_star">
+                        <img src="img/fav_full.png">
+                    </div>
+                    <div class="f_trash">
+                        <button class="button button-icon" ng-click="$root.deleteFromFavorites(item.deals[0].supplier_index)"><i class="icon ion-ios-trash-outline" style="width: 40px"></i></button>
+                    </div>
+                    <div class="f_name">
+                        <p>{{item.name}}</p>
+                    </div>
+                    <div class="f_address">
+                        <p>{{item.address}}</p>
+                    </div>
+                    <div class="f_eye">
+                        <img src="img/show_deals.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

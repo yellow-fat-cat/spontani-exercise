@@ -1,0 +1,22 @@
+ <div id="formLogin{{item.index}}" class="formLogin">
+    <div class="top">
+        <p>הרשמה</p>
+    </div>
+    <div class="forms">
+        <div class='form-row'>
+            <input type='text' name='login.username' ng-model="login.username" placeholder="שם מלא"/>
+            <input type='text' name='login.phone_number' ng-model="login.phonenumber" placeholder="מספר טלפון"/>
+        </div>
+    </div>
+    <div class="radio">
+        <type>קראתי ואני מאשר את<a ui-sref="app.conditions">תקנון השימוש</a></type>
+    </div>
+    <div class="but">
+         <button class="button button-block button-clear" ng-click="addNewUser()">
+            <p>הירשם והזמן</p>
+        </button>
+    </div>
+    <div class="close">  
+        <a ng-click="closeLoginPopup({{item}})"><img src="img/close.png"/></a>
+    </div>
+</div>

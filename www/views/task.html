@@ -1,0 +1,31 @@
+<div id="openNewInfo{{item.index}}" class="openNewInfo">
+    <div class="m_photo">
+        <img src="{{imageUrl}}/{{item.image2}}"/>
+    </div>
+    <div class="m_logo">
+        <img ng-src="{{imageUrl}}/{{item.image}}" />
+    </div>
+    <div class="m_star">
+       <img src="img/fav_empty.png" />
+    </div>
+    <div class="m_info">
+        <ul>
+            <li>
+                <span>{{item.name}}</span>
+            </p>
+            <li>{{item.address}}</p>
+            <li>שעות פתיחה:</p>
+            <li ng-bind-html="replaceLineBreaks(item.hoursopen)"></p>
+        </ul>
+        <p>{{item.phone}}</p>
+    </div>
+    <div class="call">
+    	<img src="img/phone_icon.png">
+    </div>
+    <div class="close">
+        <a ng-click="closeInfo({{item}})"><img src="img/close.png"></a>
+    </div>
+</div>
+
+
+

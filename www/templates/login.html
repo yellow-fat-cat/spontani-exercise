@@ -1,0 +1,27 @@
+<ion-view view-title=''>
+    <ion-content>
+        <div class="loginMain">
+            <div class="loginTop">
+                <h2>כניסה למערכת ניהול</h2>
+            </div>
+            <div class="loginForms">
+                <div class="form-row">
+                    <form>
+                        <input type="text" placeholder="שם משתמש" ng-model="login.username" />
+                        <input type="text" placeholder="סיסמה" ng-model="login.password" />
+                    </form>
+                </div>
+            </div>
+            <button clear class="button-clear" id="open" ng-click="login()"><span>כניסה</span></button>
+            <div class="line1">
+                <p>בהתחברות אני מאשר את &nbsp;<a menu-close ui-sref="app.full_conditions">תנאי השימוש</a></p>
+            </div>
+            <div class="line2">
+                <p>שכחתם סיסמא? &nbsp;<a>לחצו כאן</a></p>
+            </div>
+            <div class="loginBottom">
+                <img src="img/contact.png">
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

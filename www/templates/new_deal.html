@@ -1,0 +1,54 @@
+<ion-modal-view>
+    <div class="new_deal">
+        <ion-header-bar class="new_top">
+            <div class="close">
+                <a ng-click="closeSettings({{item}})"><img src="img/close.png" /></a>
+            </div>
+            <div class="buttons">
+                <button class="button button-clear" ng-click="closeSettings()">
+                    <i class="icon ion-close-circled"></i>
+                </button>
+                <span>הדיל החדש</span>
+            </div>
+        </ion-header-bar>
+        <div class="new_discount">
+            <span>הזן הנחה חדשה</span>
+        </div>
+        <div class="new_main">
+            <div class="new_text">
+                <span>הנחה</span>
+            </div>
+            <div class="new_circle">
+                <span>50</span>
+            </div>
+            <div class="new_percent">
+                <span>%</span>
+            </div>
+            <div class="new_info">
+                <span>הקלד מספר מינימום 5%</span>
+            </div>
+        </div>
+        <div class="new_list">
+            <div class="form-row">
+                <form>
+                    <div class="new_input">
+                        <input type="text" placeholder="בחר תאריך" style="font-weight: bold"><img src="img/date_icon.png">
+                        <span>תאריך המבצע</span>
+                    </div>
+                    <div class="new_input">
+                        <input type="text" placeholder="בחר שעה" style="font-weight: bold"><img src="img/time_icon.png">
+                        <span>זמן התחלה</span>
+                    </div>
+                    <div class="new_input">
+                        <input type="text" placeholder="בחר שעה" style="font-weight: bold"><img src="img/time_icon.png">
+                        <span>זמן סיום</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="new_footer">
+            <button clear ui-sref="app.conditions"><img src="img/save.png" /></button>
+        </div>
+        </ion-content>
+    </div>
+    </ion-view>

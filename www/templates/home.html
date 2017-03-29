@@ -1,0 +1,51 @@
+<ion-view view-title="" hide-back-button="false">
+    <ion-content>
+        <div class="search">
+            <input class="mainSearch" type="search" ng-model="search" placeholder="חפש מסעדה או איזור"></input>
+            <span><i class='icon ion-android-search mainSearchIcon'></i></span>
+        </div>
+        <div class="nothingFound" ng-show="(jopa | filter: search).length == 0 && items.jopa != 0">אין תוצאות</div>
+        <div class="main" ng-repeat="item in jopa |filter: search">
+            <div class="new">
+                <img src="{{imageUrl}}/{{item.image2}}" style="height=225px, width=100%" />
+                <div class="place">
+                    <img src="img/placeicon.png">
+                    <p><span>76</span> ק׳׳מ
+                        <br> ממך
+                    </p>
+                </div>
+                <div ng-repeat="pi in item.deals " class="discount">
+                    <h3>{{pi.discount_precent}}% <span>הנחה</span></h3>
+                </div>
+                <div ng-repeat="pi in item.deals" class="time">
+                    <span>בין השעות &nbsp;{{pi.startime}}-{{pi.endtime}} 
+                    </span>
+                </div>
+                <hr />
+                <div class="name">
+                    <p>{{item.name}}</p>
+                </div>
+                <div class="address">
+                    <p>{{item.address}}</p>
+                </div>
+                <div ng-repeat="pi in item.deals" class="order">
+                    <p>{{pi.quantity_ordered_plus}}</p><span>הזמינו</span>
+                </div>
+                <div class="phone"><img src="img/whats.png"></div>
+                <div class="logo">
+                    <img ng-src="{{imageUrl}}/{{item.image}}" />
+                </div>
+                <div class="bottom">
+                    <a ng-click="showStar({{item.index}})"><h5>הזמן ספונטני</h5></a>
+                </div>
+                <div class="info">
+                    <a ng-click="openInfo({{item}})"><img src="img/info.png"></a>
+                </div>
+                <div class="star">
+                    <a ng-click="addToFavorites(item.deals[0].supplier_index)" ng-show="!$root.isFavoriteSupplier(item.deals[0].supplier_index)"><img src="img/fav_empty.png" width="30"></a>
+                    <a ng-click="$root.deleteFromFavorites(item.deals[0].supplier_index)" ng-show="$root.isFavoriteSupplier(item.deals[0].supplier_index)"><img src="img/fav_full.png" width="30"></a>
+                </div>
+                <a ng-click="userLogout()">Logout_user</a>
+            </div>
+    </ion-content>
+</ion-view>

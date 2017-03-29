@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-buttons side="right">
+                <div class="m_right"><a>ספונטני</a></div>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="left">
+                <button class="button-clear" id="hui" menu-toggle="left"><img src="img/menu_icon.png" style="width: 35px;" />
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-content class="customMenu" style="background-color: #383535">
+            <ion-list class="menuLeft">
+                <ion-item menu menu-close ui-sref="app.home" ng-class="{'active-menu-item': stateCurrentName == 'app.home', 'inactive-menu-item': stateCurrentName !== 'app.home'}">
+                    <span class="1">ראשי</span>
+                    <img src="img/menu/home.png" height="30" class="customMenuIcons" ng-hide="stateCurrentName == 'app.home'">
+                    <img src="img/menu/home_active.png" height="30" class="customMenuIcons" ng-show="stateCurrentName == 'app.home'">
+                </ion-item>
+                <ion-item menu menu-close ui-sref="app.orders" ng-class="{'active-menu-item': stateCurrentName == 'app.orders', 'inactive-menu-item': stateCurrentName !== 'app.orders'}">
+                    <span class="3">ההזמנות שלי</span>
+                    <img src="img/menu/i1.png" height="30" class="customMenuIcons" ng-hide="stateCurrentName == 'app.orders'">
+                    <img src="img/menu/i1_active.png" height="30" class="customMenuIcons" ng-show="stateCurrentName == 'app.orders'">
+                </ion-item>
+                <ion-item menu menu-close ui-sref="app.favourites" ng-class="{'active-menu-item': stateCurrentName == 'app.favourites', 'inactive-menu-item': stateCurrentName !== 'app.favourites'}">
+                    <span class="2">מועדפים</span>
+                    <img src="img/menu/i2.png" height="30" class="customMenuIcons" ng-hide="stateCurrentName == 'app.favourites'">
+                    <img src="img/menu/i2_active.png" height="30" class="customMenuIcons" ng-show="stateCurrentName == 'app.favourites'">
+                </ion-item>
+                <ion-item menu menu-close ui-sref="app.conditions" ng-class="{'active-menu-item': stateCurrentName == 'app.conditions', 'inactive-menu-item': stateCurrentName !== 'app.conditions'}">
+                    <span class="2">תנאי שימוש</span>
+                    <img src="img/menu/i4.png" ng-hide="stateCurrentName == 'app.conditions'">
+                    <img src="img/menu/i4_active.png" ng-show="stateCurrentName == 'app.conditions'">
+                </ion-item>
+                <ion-item menu menu-close ng-click="openSupplierSettings()" ng-class="{'active-menu-item': stateCurrentName == 'app.login', 'inactive-menu-item': stateCurrentName !== 'app.login'}">
+                    <span class="4">בית עסק?</span>
+                    <img src="img/menu/i3.png" ng-hide="stateCurrentName == 'app.login'">
+                    <img src="img/menu/i3_active.png" ng-show="stateCurrentName == 'app.login'">
+                </ion-item>
+                <ion-item menu menu-close style="background-color:#383535; border:none" ng-click="logout()" ng-class="{'active-menu-item': stateCurrentName == 'app.supplier_settings'}">
+                    <span class="5" ng-hide="stateCurrentName !== 'app.supplier_settings'">יציאה</span>
+                    <span class="5" ng-show="stateCurrentName == 'app.supplier_settings'">יציאה</span>
+                    <img src="img/menu/i4.png" ng-hide="stateCurrentName !== 'app.supplier_settings'">
+                    <img src="img/menu/i4_active.png" ng-show="stateCurrentName == 'app.supplier_settings'">
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
